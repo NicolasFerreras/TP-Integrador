@@ -40,15 +40,23 @@ public class Ciudadano {
                  this.esValida = false;
              } else if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
                  this.esValida = (dia <= 30);
+                  this.mes = mes;
+                this.dia = dia;
              } else if (mes == 2) {
                  boolean esBisiesto = Year.isLeap(año); //Aca es donde reestcuturo, conoci ese metodo. Reemplace la formula (año % 400 == 0 || (año % 4 == 0 && año % 100 != 0)).
                  if (esBisiesto) {
                      this.esValida = (dia <= 29);
+                      this.mes = mes;
+                    this.dia = dia;
                  } else {
                      this.esValida = (dia <= 28);
+                      this.mes = mes;
+                this.dia = dia;
                  }
              } else {
                  this.esValida = true;
+                  this.mes = mes;
+                this.dia = dia;
              }
              this.año = año;
          }
@@ -131,3 +139,4 @@ public class Ciudadano {
         return tramite;
     }
 }
+
